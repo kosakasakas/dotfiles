@@ -57,7 +57,6 @@ set number
 syntax on
 set autoindent
 set smartindent
-"colorscheme darkblue
 " 自動インデント
 set shiftwidth=4
 colorscheme elflord
@@ -73,9 +72,3 @@ let g:netrw_altv = 1
 " 'o'でファイルを開くときは下側に開く。(デフォルトが上側なので入れ替え)
 let g:netrw_alto = 1
 
-"コピペしたときに崩れない
-" set paste
-" 文字コードの緊急措置
-"set fileencodings=cp932,sjis,euc-jp,utf-8
-" クリップボードへコピー
-set clipboard=unnamed
