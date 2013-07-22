@@ -58,6 +58,16 @@ set showmatch
 set wrap
 set tabstop=4"
 
+"タブの設定
+" expandtab   :ソフトタブを有効
+" tabstop     :ファイル中のタブをスペース何文字で表示するか
+" softtabstop :タブを挿入する際スペース何文字で表示するか
+" siftwidth   :自動インデントの際に何も自分表示するか
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+
  " netrwは常にtree view
 let g:netrw_liststyle=3
 " 'v'でファイルを開くときは右側に開く。(デフォルトが左側なので入れ替え)
@@ -65,5 +75,20 @@ let g:netrw_altv = 1
 " 'o'でファイルを開くときは下側に開く。(デフォルトが上側なので入れ替え)
 let g:netrw_alto = 1
 
+" 文字コード
+set fileencodings=euc-jp,cp932
+
 " クリップボード共有
 set clipboard=unnamed
+
+" ハードタブ、文末スペースの表示
+set list
+set lcs=tab:>-,trail:-
+
+" ESCをマッピング
+imap <c-j> <esc>
+" ノーマルモードのEnterで改行挿入
+noremap <CR> o<ESC>
+
+" ~/tmp以下にスワップファイルを生成
+set directory-=.
