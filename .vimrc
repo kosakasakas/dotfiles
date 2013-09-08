@@ -98,6 +98,10 @@ set clipboard=unnamed
 " 文字コード
 set fileencodings=euc-jp,cp932
 
+" クリップボード設定
+set clipboard+=unnamed
+set clipboard+=autoselect
+
 "タブの設定
 " expandtab   :ソフトタブを有効
 " tabstop     :ファイル中のタブをスペース何文字で表示するか

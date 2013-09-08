@@ -1,6 +1,12 @@
 # 言語設定
 export LANG=ja_JP.UTF-8
 
+# ヒストリの設定
+HISTFILE=~/.zsh_history
+HISTSIZE=1000000
+SAVEHIST=1000000
+
+
 # プロンプト表示
 case ${UID} in
 0)
