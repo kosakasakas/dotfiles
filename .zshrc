@@ -11,11 +11,11 @@ SAVEHIST=1000000
 case ${UID} in
 0)
 PROMPT="%F{red}%n@%m%%%f "
-RPROMPT='[%F{green}%d%f]'
+RPROMPT='[%F{orange}%d%f]'
 PROMPT2="%B%{[31m%}%_#%{[m%}%b "
 SPROMPT="%B%{[31m%}%r is correct? [n,y,a,e]:%{[m%}%b "
 [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
-PROMPT="%{[37m%}${HOST%%.*} ${PROMPT}"
+PROMPT="%F{orange}(${HOST%%.*})%f ${PROMPT}"
 ;;
 *)
 PROMPT="%F{yellow}%n@%m%%%f "
@@ -23,7 +23,7 @@ RPROMPT='[%F{green}%d%f]'
 PROMPT2="%{[31m%}%_%%%{[m%} "
 SPROMPT="%{[31m%}%r is correct? [n,y,a,e]:%{[m%} "
 [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
-PROMPT="%{[37m%}${HOST%%.*} ${PROMPT}"
+PROMPT="%F{green}(${HOST%%.*})%f ${PROMPT}"
 ;;
 esac
 
