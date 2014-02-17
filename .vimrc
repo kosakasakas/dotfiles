@@ -1,8 +1,8 @@
 filetype plugin on
 
 " vundleを使うためのおまじない
-set rtp+=~/.vim/vundle/
-call vundle#rc('~/.vim/bundle')
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
 " 使うプラグインを指定
 Bundle 'petdance/vim-perl'
