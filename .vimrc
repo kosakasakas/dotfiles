@@ -93,10 +93,10 @@ let g:netrw_alto = 1
 set clipboard=unnamed
 
 " utf-8指定
-"set fileencodings=utf-8
+set fileencodings=utf-8
 
 " 文字コード
-set fileencodings=euc-jp,cp932
+"set fileencodings=euc-jp,cp932
 
 " クリップボード設定
 set clipboard+=unnamed
