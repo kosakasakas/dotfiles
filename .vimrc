@@ -134,3 +134,6 @@ highlight CursorLine ctermbg=Black
 " set cursorcolumn
 "highlight CursorColumn ctermbg=Black
 "highlight CursorColumn ctermfg=Blue
+"
+" 大文字小文字を無視
+set ic
