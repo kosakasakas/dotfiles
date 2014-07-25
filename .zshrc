@@ -85,3 +85,18 @@ alias gcp='g cherry-pick'
 alias gps='g push'
 alias gpl='g pull'
 alias glog='git log --graph -C -M --pretty=format:"<%h> %ad [%an] %Cgreen%d%Creset %s" --all --date=short'
+alias gt='g tag'
+
+# クリップボードコピー
+# % cat mail.txt C  # メールの内容をクリップボードにコピーする
+if which pbcopy >/dev/null 2>&1 ; then 
+    # Mac  
+    alias -g C='| pbcopy'
+elif which xsel >/dev/null 2>&1 ; then 
+    # Linux
+    alias -g C='| xsel --input --clipboard'
+elif which putclip >/dev/null 2>&1 ; then 
+    # Cygwin 
+    alias -g C='| putclip'
+fi
+

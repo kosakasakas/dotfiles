@@ -12,6 +12,7 @@ Bundle 'Shougo/neosnippet'
 Bundle 'thinca/vim-quickrun'
 Bundle 'The-NERD-tree'
 Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'scrooloose/syntastic'
 
 "--------------------------------------------------------------------------
 " neocomplcache
@@ -66,6 +67,16 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=darkblue
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkblue
 "インデントの色付け幅
 let g:indent_guides_guide_size = 1
+
+"--------------------------------------------------------------------------
+"syntastic
+"
+let g:syntastic_mode_map = { 'mode': 'passive',
+                           \ 'active_filetypes': ['perl', 'javascript'],
+                           \ 'passive_filetypes': [] }
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_loc_list=2
+
 
 "--------------------------------------------------------------------------
 " vim settings
