@@ -100,3 +100,7 @@ elif which putclip >/dev/null 2>&1 ; then
     alias -g C='| putclip'
 fi
 
+#-----------------------------
+# for rake
+#-----------------------------
+alias rake='noglob rake'
