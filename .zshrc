@@ -100,3 +100,16 @@ elif which putclip >/dev/null 2>&1 ; then
     alias -g C='| putclip'
 fi
 
+# 魔改造用
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
+# Yosemiteで5.16を使う設定
+alias perl="/usr/bin/perl5.16"
+
+# GO言語用
+export GOPATH=$HOME/go
+export PATH=$HOME/go/bin:$PATH
+
+# Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
+export COCOS_TEMPLATES_ROOT=/Users/takahiro.kosaka/Library/cocos2d-x-3.8/templates
+export PATH=$COCOS_TEMPLATES_ROOT:$PATH
