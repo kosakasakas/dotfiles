@@ -113,3 +113,6 @@ export PATH=$HOME/go/bin:$PATH
 # Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
 export COCOS_TEMPLATES_ROOT=/Users/takahiro.kosaka/Library/cocos2d-x-3.8/templates
 export PATH=$COCOS_TEMPLATES_ROOT:$PATH
+
+export NVM_DIR="/Users/takahiro.kosaka/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
