@@ -116,3 +116,6 @@ export PATH=$COCOS_TEMPLATES_ROOT:$PATH
 
 export NVM_DIR="/Users/takahiro.kosaka/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# 面倒くさいのでviは使わせない
+alias vi='vim'
