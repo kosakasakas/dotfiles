@@ -1,19 +1,5 @@
 filetype plugin on
 
-" vundleを使うためのおまじない
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" 使うプラグインを指定
-Bundle 'petdance/vim-perl'
-Bundle 'hotchpotch/perldoc-vim'
-Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/neosnippet'
-Bundle 'thinca/vim-quickrun'
-Bundle 'The-NERD-tree'
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'scrooloose/syntastic'
-
 "--------------------------------------------------------------------------
 " neocomplcache
 "
