@@ -141,4 +141,5 @@ if !has('gui_running')
     set ttimeout
     set timeoutlen=100
 endif
-
+" バックスペースが機能しない問題への対応
+set backspace=indent,eol,start
