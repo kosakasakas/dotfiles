@@ -119,3 +119,6 @@ export NVM_DIR="/Users/takahiro.kosaka/.nvm"
 
 # 面倒くさいのでviは使わせない
 alias vi='vim'
+
+# win用のショートカット作成
+export CYGWIN="winsymlinks"
