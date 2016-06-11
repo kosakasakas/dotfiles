@@ -91,7 +91,7 @@ alias grh='g reset --hard HEAD'
 alias gd='g diff'
 alias gdc='g diff --cached'
 alias gap='g add -p'
-alias gsu='g submodule update'
+alias gsu='g submodule update --init --recursive'
 alias gcp='g cherry-pick'
 alias gps='g push'
 alias gpl='g pull'
@@ -115,3 +115,26 @@ fi
 # for rake
 #-----------------------------
 alias rake='noglob rake'
+
+# 魔改造用
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
+# Yosemiteで5.16を使う設定
+alias perl="/usr/bin/perl5.16"
+
+# GO言語用
+export GOPATH=$HOME/go
+export PATH=$HOME/go/bin:$PATH
+
+# Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
+export COCOS_TEMPLATES_ROOT=/Users/takahiro.kosaka/Library/cocos2d-x-3.8/templates
+export PATH=$COCOS_TEMPLATES_ROOT:$PATH
+
+export NVM_DIR="/Users/takahiro.kosaka/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# 面倒くさいのでviは使わせない
+alias vi='vim'
+
+# win用のショートカット作成
+export CYGWIN="winsymlinks"

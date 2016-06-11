@@ -1,19 +1,5 @@
 filetype plugin on
 
-" vundleを使うためのおまじない
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" 使うプラグインを指定
-Bundle 'petdance/vim-perl'
-Bundle 'hotchpotch/perldoc-vim'
-Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/neosnippet'
-Bundle 'thinca/vim-quickrun'
-Bundle 'The-NERD-tree'
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'scrooloose/syntastic'
-
 "--------------------------------------------------------------------------
 " neocomplcache
 "
@@ -148,3 +134,12 @@ highlight CursorLine ctermbg=Black
 "
 " 大文字小文字を無視
 set ic
+
+" windownのcygwinで矢印キー使えない問題に対する対応
+if !has('gui_running')
+    set notimeout
+    set ttimeout
+    set timeoutlen=100
+endif
+" バックスペースが機能しない問題への対応
+set backspace=indent,eol,start
