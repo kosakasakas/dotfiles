@@ -1,3 +1,14 @@
+## 重複パスを登録しない
+typeset -U path cdpath fpath manpath
+
+## sudo用のpathを設定
+typeset -xT SUDO_PATH sudo_path
+typeset -U sudo_path
+sudo_path=({/usr/local,/usr,}/sbin(N-/))
+
+## pathを設定
+path=(~/bin(N-/) /usr/local/bin(N-/) ${path})
+
 # 言語設定
 export LANG=ja_JP.UTF-8
 
@@ -99,6 +110,11 @@ elif which putclip >/dev/null 2>&1 ; then
     # Cygwin 
     alias -g C='| putclip'
 fi
+
+#-----------------------------
+# for rake
+#-----------------------------
+alias rake='noglob rake'
 
 # 魔改造用
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
