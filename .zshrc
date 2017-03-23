@@ -114,6 +114,9 @@ export PATH=$HOME/go/bin:$PATH
 export COCOS_TEMPLATES_ROOT=/Users/takahiro.kosaka/Library/cocos2d-x-3.8/templates
 export PATH=$COCOS_TEMPLATES_ROOT:$PATH
 
+# cygwin用設定
+export PATH=C:\\cygwin64\\bin:$PATH
+
 export NVM_DIR="/Users/takahiro.kosaka/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
@@ -122,3 +125,9 @@ alias vi='vim'
 
 # win用のショートカット作成
 export CYGWIN="winsymlinks"
+
+# cygwin用のopenコマンド
+alias open='cygstart'
+
+# cygwin用のclipboard参照コマンド
+alias clip='cat /dev/clipboard'
