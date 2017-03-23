@@ -131,3 +131,7 @@ alias open='cygstart'
 
 # cygwin用のclipboard参照コマンド
 alias clip='cat /dev/clipboard'
+
+# go言語のルートパスを指定
+export GOPATH="c:/Users/takahiro.kosaka/go"
+
