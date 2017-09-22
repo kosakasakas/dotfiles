@@ -123,7 +123,11 @@ alias rake='noglob rake'
 alias perl="/usr/bin/perl5.16"
 
 # GO言語用
+if [ "$COMSPEC" != "" ]; then
+export GOPATH=C:\\Users\\Takahiro.Kosaka\\go
+else
 export GOPATH=$HOME/go
+fi
 export PATH=$HOME/go/bin:$PATH
 
 # Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
@@ -147,7 +151,4 @@ alias open='cygstart'
 
 # cygwin用のclipboard参照コマンド
 alias clip='cat /dev/clipboard'
-
-# go言語のルートパスを指定
-export GOPATH="c:/Users/takahiro.kosaka/go"
 
