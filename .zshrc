@@ -123,12 +123,19 @@ alias rake='noglob rake'
 alias perl="/usr/bin/perl5.16"
 
 # GO言語用
+if [ "$COMSPEC" != "" ]; then
+export GOPATH=C:\\Users\\Takahiro.Kosaka\\go
+else
 export GOPATH=$HOME/go
+fi
 export PATH=$HOME/go/bin:$PATH
 
 # Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
 export COCOS_TEMPLATES_ROOT=/Users/takahiro.kosaka/Library/cocos2d-x-3.8/templates
 export PATH=$COCOS_TEMPLATES_ROOT:$PATH
+
+# cygwin用設定
+export PATH=C:\\cygwin64\\bin:$PATH
 
 export NVM_DIR="/Users/takahiro.kosaka/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -143,4 +150,10 @@ export CYGWIN="winsymlinks"
 export ANDROID_SDK_ROOT="/Users/takahiro.kosaka/Library/Android/sdk"
 export NDK_ROOT="/Applications/android-ndk-r10e"
 export PATH=$NDK_ROOT:$ANDROID_SDK_ROOT/platform-tools:$PATH
+
+# cygwin用のopenコマンド
+alias open='cygstart'
+
+# cygwin用のclipboard参照コマンド
+alias clip='cat /dev/clipboard'
 
