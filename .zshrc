@@ -1,3 +1,16 @@
+## OSチェック
+
+if [ "$(uname)" = 'Darwin' ]; then
+    OS='Mac'
+elif [ "$(expr substr $(uname -s) 1 5)" = 'Linux' ]; then
+    OS='Linux'
+elif [ "$(expr substr $(uname -s) 1 10)" = 'MINGW32_NT' ]; then                                                                                           
+  OS='Cygwin'
+else
+  echo "Your platform ($(uname -a)) is not supported."
+  exit 1
+fi
+
 ## 重複パスを登録しない
 typeset -U path cdpath fpath manpath
 
@@ -152,7 +165,11 @@ export NDK_ROOT="/Applications/android-ndk-r10e"
 export PATH=$NDK_ROOT:$ANDROID_SDK_ROOT/platform-tools:$PATH
 
 # cygwin用のopenコマンド
-alias open='cygstart'
+if [ $OS = 'Cygwin' ]; then
+    alias open='cygstart'
+else
+    alias open='open'
+fi
 
 # cygwin用のclipboard参照コマンド
 alias clip='cat /dev/clipboard'
