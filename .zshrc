@@ -138,3 +138,9 @@ alias vi='vim'
 
 # win用のショートカット作成
 export CYGWIN="winsymlinks"
+
+# Android
+export ANDROID_SDK_ROOT="/Users/takahiro.kosaka/Library/Android/sdk"
+export NDK_ROOT="/Applications/android-ndk-r10e"
+export PATH=$NDK_ROOT:$ANDROID_SDK_ROOT/platform-tools:$PATH
+
