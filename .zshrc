@@ -137,13 +137,20 @@ alias rake='noglob rake'
 # Yosemiteで5.16を使う設定
 alias perl="/usr/bin/perl5.16"
 
+# CUDA
+if [ $OS = 'Cygwin' ]; then
+    export PATH=C:\\cudnn-9.1-windows10-x64-v7.1\\cuda\\bin:$CUDA_PATH:$PATH
+else
+fi
+
 # GO言語用
 if [ "$COMSPEC" != "" ]; then
 export GOPATH=C:\\Users\\Takahiro.Kosaka\\go
+export PATH=C:\\Go\\bin:$PATH
 else
 export GOPATH=$HOME/go
-fi
 export PATH=$HOME/go/bin:$PATH
+fi
 
 # Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
 export COCOS_TEMPLATES_ROOT=/Users/takahiro.kosaka/Library/cocos2d-x-3.8/templates
