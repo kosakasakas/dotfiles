@@ -1,4 +1,4 @@
-## OSチェック
+# OSチェック
 
 if [ "$(uname)" = 'Darwin' ]; then
     OS='Mac'
@@ -136,19 +136,21 @@ alias rake='noglob rake'
 alias perl="/usr/bin/perl5.16"
 
 # GO言語用
-if [ "$COMSPEC" != "" ]; then
+if [ $OS = 'Cygwin' ]; then
 export GOPATH=C:\\Users\\Takahiro.Kosaka\\go
 else
 export GOPATH=$HOME/go
 fi
-export PATH=$HOME/go/bin:$PATH
+export PATH=$GOPATH/bin:$PATH
 
 # Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
 export COCOS_TEMPLATES_ROOT=/Users/takahiro.kosaka/Library/cocos2d-x-3.8/templates
 export PATH=$COCOS_TEMPLATES_ROOT:$PATH
 
 # cygwin用設定
+if [ $OS = 'Cygwin' ]; then
 export PATH=C:\\cygwin64\\bin:$PATH
+fi
 
 export NVM_DIR="/Users/takahiro.kosaka/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -161,8 +163,18 @@ export CYGWIN="winsymlinks"
 
 # Android
 export ANDROID_SDK_ROOT="/Users/takahiro.kosaka/Library/Android/sdk"
-export NDK_ROOT="/Applications/android-ndk-r10e"
-export PATH=$NDK_ROOT:$ANDROID_SDK_ROOT/platform-tools:$PATH
+export ANDROID_HOME=$ANDROID_SDK_ROOT
+export NDK_ROOT=$ANDROID_SDK_ROOT/ndk-bundle
+export ANDROID_NDK_ROOT=$NDK_ROOT
+export PATH=$ANDROID_HOME:$NDK_ROOT:$ANDROID_SDK_ROOT/platform-tools:$ANDROID_SDK_ROOT/tools:$PATH
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+
+# ccache
+export PATH=/usr/local/opt/ccache/libexec:$PATH
+export USE_CCACHE=1
+export NDK_CCACHE=`which ccache`
+export CCACHE_CPP2=yes
+export CCACHE_COMPILERCHECK=content
 
 # cygwin用のopenコマンド
 if [ $OS = 'Cygwin' ]; then
@@ -174,3 +186,33 @@ fi
 # cygwin用のclipboard参照コマンド
 alias clip='cat /dev/clipboard'
 
+# python
+#if [ $OS = 'Mac' ]; then
+#export PATH=$HOME/anaconda3/bin/:$PATH
+#export PATH=$PYENV_ROOT/versions/anaconda3-5.0.0/bin/:$PATH
+#else
+#fi
+
+#POKEASS
+#export PATH=$HOME/git/ScaffoldingScripts/bin/darwin/:$PATH
+#export DEPOT_TOOLS=$HOME/git/ScaffoldingScripts/depot_tools
+#export PATH=$HOME/.cargo/bin:$PATH
+export PATH="$PATH:$HOME/git/depot_tools"
+export PATH="$PATH:$HOME/git/PokeAss/GENie"
+export PATH="$PATH:$HOME/git/PokeAss/PokeAss/bin/darwin"
+export PATH="$PATH:/usr/local/share/dotnet/"
+export PATH="$PATH:$HOME/git/PokeAss/PokeAss/dotnet"
+#export PATH="/usr/local/Cellar/openssl@1.1/1.1.1d/bin:$PATH"
+
+# AVR-GCC
+export PATH=/usr/local/CrossPack-AVR-20131216/bin:$PATH
+
+export MACOSX_DEPLOYMENT_TARGET=10.9
+
+# react, gatsby
+export PATH="/usr/local/opt/icu4c/bin:$PATH"
+export PATH="/usr/local/opt/icu4c/sbin:$PATH"
+export LDFLAGS="-L/usr/local/opt/icu4c/lib"
+export CPPFLAGS="-I/usr/local/opt/icu4c/include"
+export PKG_CONFIG_PATH="/usr/local/opt/icu4c/lib/pkgconfig"
+export PATH=$HOME/.nodebrew/current/bin:$PATH
