@@ -4,7 +4,9 @@ if [ "$(uname)" = 'Darwin' ]; then
     OS='Mac'
 elif [ "$(expr substr $(uname -s) 1 5)" = 'Linux' ]; then
     OS='Linux'
-elif [ "$(expr substr $(uname -s) 1 10)" = 'MINGW32_NT' ]; then                                                                                           
+elif [ "$(expr substr $(uname -s) 1 10)" = 'MINGW32_NT' ]; then
+  OS='Cygwin'
+elif [ "$(expr substr $(uname -s) 1 9)" = 'CYGWIN_NT' ]; then
   OS='Cygwin'
 else
   echo "Your platform ($(uname -a)) is not supported."
@@ -135,12 +137,18 @@ alias rake='noglob rake'
 # Yosemiteで5.16を使う設定
 alias perl="/usr/bin/perl5.16"
 
+# CUDA
+if [ $OS = 'Cygwin' ]; then
+    export PATH=C:\\cudnn-9.1-windows10-x64-v7.1\\cuda\\bin:$CUDA_PATH:$PATH
+else
+fi
+
 # GO言語用
 if [ $OS = 'Cygwin' ]; then
 export GOPATH=C:\\Users\\Takahiro.Kosaka\\go
+export PATH=C:\\Go\\bin:$PATH
 else
 export GOPATH=$HOME/go
-fi
 export PATH=$GOPATH/bin:$PATH
 
 # Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
